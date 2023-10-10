@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<technology>
+ <name>{{ cookiecutter.pdk_name }}</name>
+ <description/>
+ <dbu>0.001</dbu>
+ <base-path/>
+ <original-base-path/>
+ <layer-properties_file>{{ cookiecutter.pdk_lyp_name }}.lyp</layer-properties_file>
+ <add-other-layers>true</add-other-layers>
+  <connectivity></connectivity>
+</technology>
