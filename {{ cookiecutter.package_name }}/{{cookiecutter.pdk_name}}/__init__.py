@@ -21,7 +21,7 @@ PDK = Pdk(
     layers=LAYER.dict(),
     layer_stack=None,
     {%- if cookiecutter.pdk_tech_files == "From GDSFactory LayerViews Python Class generate KLayout Files" -%}
-    layer_views={{ cookiecutter.pdk_name }}.tech.LAYER_VIEWS 
+    layer_views={{ cookiecutter.pdk_name }}.tech.LAYER_VIEWS,
     {%- elif cookiecutter.pdk_tech_files == "From existing KLayout Files generate GDSFactory LayerViews Python Class" -%}
     layer_views= LayerViews(filepath=PATH.lyp),
     {%- elif cookiecutter.pdk_tech_files == "From GDSFactory YMAL generate KLayout Files" -%}
