@@ -8,10 +8,11 @@ from gdsfactory.pdk import Pdk, constants
 from {{ cookiecutter.pdk_name }} import components
 from {{ cookiecutter.pdk_name }}.config import PATH
 
+
 {%- if cookiecutter.pdk_tech_files == "From GDSFactory LayerViews Python Class generate KLayout Files" -%}
-from {{ cookiecutter.pdk_name }}.tech import LAYER, cross_sections
+from {{ cookiecutter.pdk_name }}.tech import LAYER, LAYER_VIEWS, cross_sections
 {%- else -%}
-from {{ cookiecutter.pdk_name }}.tech import LAYER
+from {{ cookiecutter.pdk_name }}.tech import LAYER, cross_sections
 {% endif %}
 
 
