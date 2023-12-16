@@ -15,13 +15,11 @@ class LayerMap(BaseModel):
     
 LAYER = LayerMap()
 
-{%- if cookiecutter.pdk_tech_files == "From GDSFactory LayerViews Python Class generate KLayout Files" -%}
-
+{%+ if cookiecutter.pdk_tech_files == "From GDSFactory LayerViews Python Class generate KLayout Files" %}
 class LayerViews(LayerViews):
     WG_CORE: LayerView = LayerView(color='blue')
 
 LAYER_VIEWS = LayerViews(layer_map=LAYER.dict())
-
 {% endif %}
 
 nm = 1e-3
