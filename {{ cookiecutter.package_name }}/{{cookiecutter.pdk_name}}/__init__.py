@@ -2,17 +2,20 @@ from __future__ import annotations
 
 import gdsfactory as gf
 from gdsfactory.get_factories import get_cells
-from gdsfactory.cross_section import get_cross_section_factories
+# from gdsfactory.cross_section import get_cross_section_factories
 from gdsfactory.pdk import Pdk, constants
 
 from {{ cookiecutter.pdk_name }} import components
 from {{ cookiecutter.pdk_name }}.config import PATH
 
-
 {%- if cookiecutter.pdk_tech_files == "From GDSFactory LayerViews Python Class generate KLayout Files" -%}
+
 from {{ cookiecutter.pdk_name }}.tech import LAYER, LAYER_VIEWS, cross_sections
+
 {%- else -%}
+
 from {{ cookiecutter.pdk_name }}.tech import LAYER, cross_sections
+
 {% endif %}
 
 
@@ -28,7 +31,7 @@ PDK = Pdk(
     layers=LAYER.dict(),
     layer_stack=None,
     {%- if cookiecutter.pdk_tech_files == "From GDSFactory LayerViews Python Class generate KLayout Files" -%}
-    layer_views={{ cookiecutter.pdk_name }}.tech.LAYER_VIEWS,
+    layer_views=LAYER_VIEWS,
     {%- elif cookiecutter.pdk_tech_files == "From existing KLayout Files generate GDSFactory LayerViews Python Class" -%}
     layer_views= LayerViews(filepath=PATH.lyp),
     {%- elif cookiecutter.pdk_tech_files == "From GDSFactory YMAL generate KLayout Files" -%}

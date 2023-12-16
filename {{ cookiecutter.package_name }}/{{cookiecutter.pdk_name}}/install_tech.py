@@ -33,19 +33,22 @@ if __name__ == "__main__":
 
     from config import PATH
     
-    
     {%- if cookiecutter.pdk_tech_files == "From GDSFactory LayerViews Python Class generate KLayout Files" -%}
+    
     # TODO: Export using somethink similar to to_lyp
     
     {%- elif cookiecutter.pdk_tech_files == "From existing KLayout Files generate GDSFactory LayerViews Python Class" -%}
+    
     LAYER_VIEWS = LayerViews(filepath=PATH.lyp)
     LAYER_VIEWS.to_yaml(layer_file=PATH.yaml)
     print(LAYER_VIEWS)
     
     {%- elif cookiecutter.pdk_tech_files == "From GDSFactory YMAL generate KLayout Files" -%}
+    
     LAYER_VIEWS = LayerViews(filepath=PATH.yaml)
     LAYER_VIEWS.to_lyp(filepath=PATH.lyp)
     print(LAYER_VIEWS)
+
     {% endif %}
 
 
