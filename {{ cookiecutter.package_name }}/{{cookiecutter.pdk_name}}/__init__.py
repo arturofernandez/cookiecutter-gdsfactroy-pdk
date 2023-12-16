@@ -7,12 +7,12 @@ from gdsfactory.pdk import Pdk, constants
 
 from {{ cookiecutter.pdk_name }} import components
 from {{ cookiecutter.pdk_name }}.config import PATH
-from {{ cookiecutter.pdk_name }}.tech import LAYER
+from {{ cookiecutter.pdk_name }}.tech import LAYER, cross_sections
 
 from gdsfactory.technology import LayerView, LayerViews
 
 cells = get_cells([components])
-cross_sections = get_cross_section_factories(LAYER)
+# cross_sections = get_cross_section_factories(LAYER)
 
 PDK = Pdk(
     name="{{ cookiecutter.pdk_name }}",
