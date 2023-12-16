@@ -26,6 +26,8 @@ PDK = Pdk(
     layer_views= LayerViews(filepath=PATH.lyp),
     {%- elif cookiecutter.pdk_tech_files == "From GDSFactory YMAL generate KLayout Files" -%}
     layer_views= LayerViews(filepath=PATH.yaml),
+    {% endif %}
+
     # layer_transitions=LAYER_TRANSITIONS,
     # sparameters_path=PATH.sparameters,
     constants=constants,
