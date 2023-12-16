@@ -1,6 +1,7 @@
 {
     "package_name": "your_package_name",
     "pdk_name": "my_pdk",
+    "pdk_tech_files" : ["From GDSFactory LayerViews Python Class generate KLayout Files", "From GDSFactory YMAL generate KLayout Files", "From existing KLayout Files generate GDSFactory LayerViews Python Class"],
     "pdk_lyp_name": "my_pdk_lyp",
     "pdk_lyt_name": "my_pdk_lyt",
     "pdk_layers_yaml_name": "my_pdk_yaml",
