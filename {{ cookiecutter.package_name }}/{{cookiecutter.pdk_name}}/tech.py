@@ -15,6 +15,7 @@ class LayerMap(BaseModel):
     
 LAYER = LayerMap()
 
+
 {%- if cookiecutter.pdk_tech_files == "From GDSFactory LayerViews Python Class generate KLayout Files" -%}
 class LayerViews(LayerViews):
     WG_CORE: LayerView = LayerView(color='blue')
